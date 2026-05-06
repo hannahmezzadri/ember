@@ -1,0 +1,131 @@
+.ember-chatdock {
+  width: var(--ember-shell-aside-width);
+  flex-shrink: 0;
+  border-left: 1px solid var(--scout-border-secondary, #e5e7eb);
+  background: var(--scout-surface-primary, #fff);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+@media (max-width: 1100px) {
+  .ember-chatdock { width: 320px; }
+}
+@media (max-width: 900px) {
+  .ember-chatdock { display: none; }
+}
+
+.ember-chatdock__header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--scout-border-secondary, #e5e7eb);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.ember-chatdock__title { font-weight: 600; font-size: 13px; }
+.ember-chatdock__subtitle { font-size: 11px; color: var(--scout-text-display-secondary, #6b7280); }
+
+.ember-chatdock__autopilot {
+  padding: 8px 16px;
+  background: var(--scout-surface-secondary, #f3f4f6);
+  border-bottom: 1px solid var(--scout-border-secondary, #e5e7eb);
+}
+
+.ember-chatdock__list {
+  max-height: 240px;
+  overflow: auto;
+  padding: 4px;
+  border-bottom: 1px solid var(--scout-border-secondary, #e5e7eb);
+}
+
+.ember-chatdock__active {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+.ember-chatdock__activehead {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--scout-border-secondary, #e5e7eb);
+}
+.ember-chatdock__modes {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--scout-border-secondary, #e5e7eb);
+}
+.ember-pill {
+  background: transparent;
+  border: 1px solid var(--scout-border-primary, #d1d5db);
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--scout-text-display-secondary, #6b7280);
+}
+.ember-pill--active {
+  background: var(--scout-fill-info, #e8f6fc);
+  border-color: var(--scout-border-info, #029dd4);
+  color: var(--scout-text-display-info, #015a78);
+}
+
+.ember-chatdock__messages {
+  flex: 1;
+  overflow: auto;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ember-msg {
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  max-width: 90%;
+}
+.ember-msg__author {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--scout-text-display-secondary, #6b7280);
+  margin-bottom: 2px;
+}
+.ember-msg--customer { background: var(--scout-surface-secondary, #f3f4f6); align-self: flex-start; }
+.ember-msg--agent { background: var(--scout-fill-info, #e8f6fc); align-self: flex-end; }
+.ember-msg--ai {
+  background: color-mix(in srgb, var(--scout-brand-ember-primary, #a1cc3c) 18%, transparent);
+  border: 1px dashed var(--scout-brand-ember-primary, #a1cc3c);
+  align-self: flex-start;
+}
+.ember-msg--system { background: transparent; color: var(--scout-text-display-secondary, #6b7280); font-style: italic; align-self: center; }
+
+.ember-chatdock__handoff,
+.ember-chatdock__compose {
+  padding: 10px 16px;
+  border-top: 1px solid var(--scout-border-secondary, #e5e7eb);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ember-chatdock__compose .ember-input { flex: 1; }
+
+.ember-chatdock-fab {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: var(--scout-fill-interactive-primary, #029dd4);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 80;
+}

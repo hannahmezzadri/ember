@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--scout-typography-body-font-family, Inter, system-ui, sans-serif);
+  font-size: var(--scout-typography-body-font-size, 14px);
+  line-height: var(--scout-typography-body-line-height, 21px);
+  color: var(--scout-text-display-primary, #111827);
+  background: var(--scout-surface-canvas, #f9fafb);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  color: var(--scout-text-interactive-primary, #029dd4);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+:root {
+  --ember-shell-header-height: 56px;
+  --ember-shell-subnav-height: 48px;
+  --ember-shell-sidebar-width: 240px;
+  --ember-shell-aside-width: 380px;
+  --ember-radius-sm: 4px;
+  --ember-radius-md: 8px;
+  --ember-radius-lg: 12px;
+}
+
+[data-density="condensed"] {
+  --ember-shell-header-height: 48px;
+  --ember-shell-subnav-height: 40px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scout-border-secondary, #e5e7eb);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scout-border-primary, #d1d5db);
+}

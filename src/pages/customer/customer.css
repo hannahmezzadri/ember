@@ -1,0 +1,109 @@
+.ember-customer__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--scout-surface-primary, #fff);
+  border: 1px solid var(--scout-border-secondary, #e5e7eb);
+  border-radius: var(--ember-radius-md);
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.ember-customer__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ember-customer__meta {
+  font-size: 12px;
+  color: var(--scout-text-display-secondary, #6b7280);
+  margin-top: 4px;
+}
+.ember-customer__summary {
+  display: flex;
+  gap: 24px;
+}
+.ember-customer__sumlabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--scout-text-display-secondary, #6b7280);
+}
+.ember-customer__sumvalue {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ember-account-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.ember-account-card {
+  background: var(--scout-surface-primary, #fff);
+  border: 1px solid var(--scout-border-secondary, #e5e7eb);
+  border-radius: var(--ember-radius-md);
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.ember-account-card:hover {
+  border-color: var(--scout-border-info, #029dd4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  text-decoration: none;
+}
+
+.ember-lob-section {
+  margin-bottom: 16px;
+}
+.ember-lob-section__title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--scout-text-display-secondary, #6b7280);
+  margin: 8px 0;
+}
+
+.ember-account-page {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.ember-account-main { flex: 1; min-width: 0; }
+.ember-account-aside { width: 320px; flex-shrink: 0; }
+
+@media (max-width: 1100px) {
+  .ember-account-page { flex-direction: column; }
+  .ember-account-aside { width: 100%; }
+}
+
+.ember-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.ember-table th {
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--scout-text-display-secondary, #6b7280);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--scout-border-secondary, #e5e7eb);
+  font-weight: 600;
+}
+.ember-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--scout-border-secondary, #e5e7eb);
+}
+.ember-table tr:last-child td { border-bottom: 0; }
+[data-density="condensed"] .ember-table td { padding: 6px 10px; }
+
+.ember-amount--neg { color: var(--scout-text-display-critical, #cc2427); }
+.ember-amount--pos { color: var(--scout-text-display-success, #2e8a1c); }

@@ -1,0 +1,156 @@
+.ember-wf {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ember-wf__step {
+  border: 1px solid var(--scout-border-secondary, #e5e7eb);
+  border-radius: var(--ember-radius-md);
+  padding: 14px 16px;
+  background: var(--scout-surface-primary, #fff);
+  transition: border-color 120ms ease, background 120ms ease;
+}
+.ember-wf__step--active {
+  border-color: var(--scout-border-info, #029dd4);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--scout-border-info, #029dd4) 12%, transparent);
+}
+.ember-wf__step--done {
+  background: var(--scout-surface-secondary, #f3f4f6);
+}
+
+.ember-wf__steptitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--scout-text-display-primary, #111827);
+}
+.ember-wf__step:not(.ember-wf__step--active):not(.ember-wf__step--done) .ember-wf__steptitle {
+  color: var(--scout-text-display-secondary, #6b7280);
+}
+.ember-wf__stepbody {
+  margin-top: 12px;
+}
+
+.ember-wf__choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+.ember-wf__choice {
+  text-align: left;
+  background: var(--scout-surface-primary, #fff);
+  border: 1px solid var(--scout-border-primary, #d1d5db);
+  border-radius: var(--ember-radius-md);
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: all 120ms ease;
+}
+.ember-wf__choice:hover { border-color: var(--scout-border-info, #029dd4); }
+.ember-wf__choice--selected {
+  border-color: var(--scout-border-info, #029dd4);
+  background: var(--scout-fill-info, #e8f6fc);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--scout-border-info, #029dd4) 30%, transparent);
+}
+.ember-wf__choicelabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--scout-text-display-secondary, #6b7280);
+  font-weight: 600;
+}
+.ember-wf__choicevalue {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 4px;
+  color: var(--scout-text-display-primary, #111827);
+}
+.ember-wf__choicehint {
+  font-size: 11px;
+  color: var(--scout-text-display-secondary, #6b7280);
+  margin-top: 2px;
+}
+
+.ember-wf__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.ember-wf__review { padding: 4px 0; }
+.ember-wf__attest {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: var(--scout-color-yellow-50, #fefce8);
+  border: 1px dashed var(--scout-color-yellow-400, #facc15);
+  border-radius: var(--ember-radius-sm);
+  font-size: 12px;
+  color: var(--scout-text-display-primary, #111827);
+}
+
+.ember-wf__warn {
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: var(--scout-color-red-50, #fdf3f3);
+  border: 1px solid var(--scout-color-red-200, #f7caca);
+  border-radius: var(--ember-radius-sm);
+  font-size: 12px;
+  color: var(--scout-text-display-critical, #cc2427);
+}
+
+.ember-wf__done {
+  padding: 14px;
+  text-align: center;
+  background: var(--scout-color-green-50, #f1faf0);
+  border: 1px solid var(--scout-color-green-200, #b8e9ad);
+  border-radius: var(--ember-radius-md);
+  color: var(--scout-text-display-success, #2e8a1c);
+  font-weight: 600;
+}
+
+/* Wrap-up drawer */
+.ember-wrapup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 480px;
+  max-width: 100vw;
+  height: 100vh;
+  background: var(--scout-surface-primary, #fff);
+  border-left: 1px solid var(--scout-border-secondary, #e5e7eb);
+  box-shadow: -8px 0 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+  transform: translateX(100%);
+  transition: transform 240ms ease;
+}
+.ember-wrapup--open { transform: translateX(0); }
+.ember-wrapup__overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 190;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease;
+}
+.ember-wrapup__overlay--open { opacity: 1; pointer-events: auto; }
+.ember-wrapup__header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--scout-border-secondary, #e5e7eb);
+}
+.ember-wrapup__body {
+  padding: 16px 20px;
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ember-wrapup__footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--scout-border-secondary, #e5e7eb);
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
